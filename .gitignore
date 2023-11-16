@@ -1,0 +1,12 @@
+**/.DS_Store
+.idea
+ui/.svelte-kit
+ui/node_modules
+ui/package-lock.json
+server/build
+server/AutoRL_X_Server.egg-info
+server/logs/*
+server/tuner_*
+**/__pycache__
+**/build
+server/gyms

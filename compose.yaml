@@ -1,0 +1,48 @@
+services:
+  autorlx_db:
+    image: mysql
+    container_name: autorlx_db
+    environment:
+      - MYSQL_ROOT_PASSWORD=autorlx$321
+      - MYSQL_DATABASE=autorlx
+      - MYSQL_USER=autorlx
+      - MYSQL_PASSWORD=autorlx$123
+    volumes:
+      - autorlx_db_data:/var/lib/mysql
+      - ./server/data_models/autorlx_latest.sql:/docker-entrypoint-initdb.d/autorlx.sql
+    restart: always
+    ports:
+      - "3306:3306"
+
+  autorlx_server:
+    image: lorifranke/autorlx-server:0.1.0
+    container_name: autorlx_server
+    depends_on:
+      - autorlx_db
+    restart: always
+    links:
+      - autorlx_db
+    environment:
+      - DB_USER=autorlx
+      - DB_SCHEMA=autorlx
+      - DB_HOST=autorlx_db
+      - DB_PORT=3306
+      - DB_PASSWORD=autorlx$123
+      - AUTORL_X_SERVER_URL=http://localhost:8000
+    ports:
+      - "8000:8000"
+
+  autorlx_ui:
+    image: lorifranke/autorlx-ui:0.1.0
+    container_name: autorlx_ui
+    depends_on:
+      - autorlx_server
+    restart: always
+    links:
+      - autorlx_server
+    ports:
+      - "3400:3400"
+
+
+volumes:
+  autorlx_db_data:

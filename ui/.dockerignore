@@ -1,0 +1,9 @@
+node_modules
+dist
+.svelte-kit
+.git
+.gitignore
+package-lock.json
+README.md
+server
+base

@@ -65,11 +65,11 @@ npm run dev &           # Listens to port 5173
 
 ## How to cite us:
 ```
-@inproceedings{franke2024autorlx,
-title= {AutoRL X: Automated Reinforcement Learning on the Web},
-author={Franke, L. and Weidele, D. and Dehmamy, N. and Lipeng, N. and Haehn, D.},
-booktitle={Special Issue of the IUI 2023, ACM Journal Transactions on Interactive Intelligent Systems},
-year={2024},
-organization={ACM}
+@article{franke2023autorl,
+  title={AutoRL X: Automated Reinforcement Learning on the Web},
+  author={Franke, Loraine and Weidele, Daniel Karl I and Dehmamy, Nima and Ning, Lipeng and Haehn, Daniel},
+  journal={ACM Transactions on Interactive Intelligent Systems},
+  year={2023},
+  publisher={ACM New York, NY}
 }
 ```
